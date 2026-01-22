@@ -18,6 +18,9 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\CartController;
+use App\Http\Controllers\API\OrderController;
+
 
 
 Route::post('/register', [AuthController::class,'register']);
@@ -32,3 +35,13 @@ Route::middleware('auth:sanctum')->group(function(){
 
 Route::apiResource('categories', CategoryController::class);
 Route::apiResource('products', ProductController::class);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/cart/add', [CartController::class, 'add']);
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::put('/cart/{id}', [CartController::class, 'update']);
+    Route::delete('/cart/{id}', [CartController::class, 'destroy']);
+});
+Route::middleware('auth:sanctum')->post('/order/place', [OrderController::class, 'placeOrder']);
+Route::middleware('auth:sanctum')->get('/orders/history', [OrderController::class, 'history']);
+
