@@ -45,3 +45,13 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::middleware('auth:sanctum')->post('/order/place', [OrderController::class, 'placeOrder']);
 Route::middleware('auth:sanctum')->get('/orders/history', [OrderController::class, 'history']);
 
+//payment route
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::post('/payment/init', [App\Http\Controllers\PaymentController::class, 'initPayment']);
+
+});
+
+Route::post('/payment/success', [App\Http\Controllers\PaymentController::class, 'success']);
+Route::post('/payment/fail', [App\Http\Controllers\PaymentController::class, 'fail']);
+Route::post('/payment/cancel', [App\Http\Controllers\PaymentController::class, 'cancel']);
+
