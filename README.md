@@ -1,59 +1,56 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🛒 Simple E-Commerce App (Android + Laravel)
+**A 7-Day Advanced Development Challenge**
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a full-stack E-commerce solution featuring a modern Android application and a secure Laravel REST API backend. It was built with a focus on clean architecture, security, and real-world scalability. 
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 7-Day Roadmap (Project Journey)
+**Day 1**: Planning, database design (Users, Products, Categories, Orders, Order_items), and Laravel setup. 
+**Day 2**: Secure Authentication using Laravel Sanctum, password hashing, and token-based login. 
+**Day 3**: Product & Category management with CRUD APIs and role-based access control. 
+**Day 4**: Android UI setup and API integration using Retrofit for login/register and product listing. 
+**Day 5**: Cart system implementation (add to cart, update quantity) and Order placement flow. 
+**Day 6**: Payment Gateway integration (SSLCommerz/Stripe) with secure backend callback verification. 
+**Day 7**: Final security review, UI polishing, bug fixing, and documentation.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Key Features
+**Secure Auth**: JWT/Sanctum token-based authentication for protected APIs. 
+**Dynamic Catalog**: Product listing with categories using RecyclerView. 
+**Cart & Orders**: Full shopping cart functionality and order history screen. 
+**Payment Ready**: Integrated online payment system for a complete purchase flow. 
+**Clean Code**: Built with clean architecture and scalability in mind. 
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🛠 Tech Stack
+**Backend**: Laravel (PHP), MySQL, Sanctum. 
+**Android**: Java, Retrofit, RecyclerView. 
+**Payments**: SSLCommerz / Stripe (Test Mode). 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## ⚙️ Installation & Setup
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Backend (Laravel)
+1. Clone the repository.
+2. Run `composer install`.
+3. Configure your `.env` file (Database and Mail settings).
+4. Run `php artisan migrate`.
+5. Start the server: `php artisan serve`.
 
-### Premium Partners
+### Android App
+1. Open the project in Android Studio.
+2. Update the `BASE_URL` in your Retrofit client to your server's IP address. 
+3. Build and run the app.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 📸 Screenshots
+[Add your app screenshots here to make the profile look professional]
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+**Developed by Shahiduzzaman** 🚀  
+Connect with me on [LinkedIn](https://www.linkedin.com/in/shahid91/)
