@@ -16,10 +16,15 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ProductController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\CartController;
 use App\Http\Controllers\API\OrderController;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Verified;
 
 
 
@@ -55,3 +60,31 @@ Route::post('/payment/success', [App\Http\Controllers\PaymentController::class, 
 Route::post('/payment/fail', [App\Http\Controllers\PaymentController::class, 'fail']);
 Route::post('/payment/cancel', [App\Http\Controllers\PaymentController::class, 'cancel']);
 
+// Email Verification Route
+Route::get('/email/verify/{id}/{hash}', function (Request $request, $id, $hash) {
+    // Find the user by ID
+    $user = User::findOrFail($id);
+
+    // Check if the hash matches the user's email
+    if (!hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+        return response()->json(['message' => 'Invalid verification link.'], 403);
+    }
+
+    // Check if already verified
+    if ($user->hasVerifiedEmail()) {
+        return response()->json(['message' => 'Email already verified.']);
+    }
+
+    // Mark as verified
+    if ($user->markEmailAsVerified()) {
+        event(new Verified($user));
+    }
+
+    return view('verified');
+})->middleware(['signed'])->name('verification.verify');
+
+// Resend Verification Email
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return response()->json(['message' => 'Verification link sent!']);
+})->middleware(['auth:sanctum', 'throttle:6,1'])->name('verification.send');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Validation\ValidationException;
 
 
@@ -24,8 +25,14 @@ class AuthController extends Controller
             'email'=> $request->email,
             'password'=> Hash::make($request->password),
         ]);
+        event(new Registered($user));
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return response()->json([
+            'message'=>'User registered successfully. Please verify email.',
+            'access_token' => $token,
+            'user'=>$user
+        ], 201);
 
-        return response()->json(['message'=>'User registered successfully', 'user'=>$user], 201);
     }
 
     // User Login
