@@ -42,14 +42,28 @@ This project is a full-stack E-commerce solution featuring a modern Android appl
 5. Start the server: `php artisan serve`.
 
 ### Android App
-1. Open the project in Android Studio.
-2. Update the `BASE_URL` in your Retrofit client to your server's IP address. 
-3. Build and run the app.
+Android App Project url  https://github.com/developershahiduzzaman/Simple-E-Commerce-App.git
 
 ---
 
 ## 📸 Screenshots
-[Add your app screenshots here to make the profile look professional]
+<img width="1497" height="918" alt="Image" src="https://github.com/user-attachments/assets/00a2ef5c-2b2f-4d09-81c8-c1ccccec53ad" />
+
+<img width="1516" height="894" alt="Image" src="https://github.com/user-attachments/assets/d1af45da-a5c8-4d64-9e4a-a6e2c97f08fe" />
+
+<img width="1518" height="829" alt="Image" src="https://github.com/user-attachments/assets/8918b57a-b732-42b0-9fc4-91a72b5d241c" />
+
+<img width="1514" height="755" alt="Image" src="https://github.com/user-attachments/assets/adc1a533-b9fd-4f81-8f42-b7158b465a16" />
+
+<img width="1486" height="908" alt="Image" src="https://github.com/user-attachments/assets/71aa25e4-c19d-4e32-ac35-bb083b4cd1c6" />
+
+<img width="1483" height="906" alt="Image" src="https://github.com/user-attachments/assets/108cb21f-8987-467f-8711-0849c2ea0972" />
+
+<img width="1487" height="849" alt="Image" src="https://github.com/user-attachments/assets/789b2da5-61dd-4019-886d-5d1877dc8a03" />
+
+<img width="1138" height="753" alt="Image" src="https://github.com/user-attachments/assets/7ba3c1b1-dead-45c6-a38b-b4a92cc42e07" />
+
+<img width="1490" height="740" alt="Image" src="https://github.com/user-attachments/assets/68c428b7-8fc2-42b5-ad93-f2edad85e6be" />
 
 ---
 **Developed by Shahiduzzaman** 🚀  
