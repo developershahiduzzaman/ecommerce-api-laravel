@@ -9,7 +9,7 @@ use App\Models\Cart;
 
 class PaymentController extends Controller {
 
-    // পেমেন্ট শুরু করার মেথড
+
     public function initPayment(Request $request) {
         $user = Auth::user();
         $tran_id = "TXN_" . uniqid();
@@ -63,24 +63,24 @@ class PaymentController extends Controller {
         return response()->json(['error' => 'Payment Initiation Failed'], 400);
     }
 
-    // পেমেন্ট সফল হওয়ার মেথড
+
     public function success(Request $request) {
         $tran_id = $request->input('tran_id');
 
-        // ১. ট্রানজেকশন আইডি দিয়ে অর্ডার খুঁজে বের করা
+     
         $order = Order::where('transaction_id', $tran_id)->first();
 
         if ($order) {
-            // ২. অর্ডারের স্ট্যাটাস আপডেট করা
+     
             $order->status = 'Confirmed';
-            $order->payment_status = 'Paid'; // কলামটি ডাটাবেজে না থাকলে ডাটাবেজে যোগ করুন
+            $order->payment_status = 'Paid'; 
             $order->save();
 
-            // ৩. কার্ট ক্লিয়ার করা (অর্ডার অবজেক্ট থেকে user_id নিয়ে)
-            // Auth::id() এখানে কাজ করবে না কারণ এটি SSLCommerz সার্ভার থেকে আসা রিকোয়েস্ট
+          
+            // Auth::id
             Cart::where('user_id', $order->user_id)->delete();
 
-            // ৪. অ্যান্ড্রয়েড অ্যাপের শনাক্তকরণের জন্য JSON রেসপন্স
+         
             return response()->json([
                 'status' => 'success',
                 'transaction_id' => $tran_id,
